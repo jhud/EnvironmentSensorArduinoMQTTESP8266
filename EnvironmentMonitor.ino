@@ -14,22 +14,6 @@
 
 #define PRINT(x) Serial.println(x)
 
-//ESP12E pinouts
-// 0 = GPIO0
-// 1 = TXD (blue LED)
-// 2 = GPIO2
-// 3 = RXD
-// 4 = GPIO4
-// 5 = GPIO5
-
-// 6/7/8/11 = causes a crash, do not use
-// 9/10 = used for flash internally, do not use
-
-// 12 = GPIO12 pwm?
-// 13 = GPIO13 pwm?
-// 14 = GPIO14
-// 15 = GPIO15 pwm? tie low, needs to be low on boot. Can use as output otherwise
-// 16 = GPIO16
 
 #include "Adafruit_MQTT.h" // The generic pub/sub library didn't work
 #include "Adafruit_MQTT_Client.h"
@@ -60,11 +44,8 @@ DHTesp dht;
 int dhtPin = 5;
 #endif
 
-
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  1883
-
-
 
 
 void callback(char* topic, byte* message, unsigned int length);
